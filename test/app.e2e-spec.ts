@@ -37,9 +37,7 @@ describe('App e2e', () => {
         return pactum 
           .spec() 
           .post( '/auth/signup' ) 
-          .withBody({ 
-            password: dto.password, 
-          }) 
+          .withBody({password: dto.password}) 
           .expectStatus(400); 
       }); 
 
@@ -47,9 +45,7 @@ describe('App e2e', () => {
         return pactum 
           .spec() 
           .post( '/auth/signup' ) 
-          .withBody({ 
-            email: dto.email, 
-          }) 
+          .withBody({email: dto.email}) 
           .expectStatus(400); 
       })
 
@@ -75,9 +71,7 @@ describe('App e2e', () => {
         return pactum 
           .spec() 
           .post( '/auth/signin' ) 
-          .withBody({ 
-            password: dto.password, 
-          }) 
+          .withBody({password: dto.password}) 
           .expectStatus(400); 
       }); 
 
@@ -85,9 +79,7 @@ describe('App e2e', () => {
         return pactum 
           .spec() 
           .post( '/auth/signin' ) 
-          .withBody({ 
-            email: dto.email, 
-          }) 
+          .withBody({email: dto.email}) 
           .expectStatus(400); 
       })
 
@@ -103,9 +95,16 @@ describe('App e2e', () => {
           .spec()
           .post('/auth/signin')
           .withBody(dto)
-          .expectStatus(201);
+          .expectStatus(200);
       })
     })
     
   })
+
+  describe('User', () => {
+    describe('Get me', () => {})
+
+    describe('Edit user', () => {})
+  })
+
 })
